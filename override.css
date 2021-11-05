@@ -1,0 +1,8 @@
+/*this entire css document exists in order to correct some errors in the splide css that I can't correct in the style.css because of the DOM load order*/
+.splide__progress__bar {
+    background-color: red;/*colouring the progress bar*/
+}
+.splide__pagination {
+    bottom: 3px;
+    background-color: black;/*colouring the paginition background colour to blend in with the background*/
+}

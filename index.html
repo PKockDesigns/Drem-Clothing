@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+            <title> 
+                Drem Clothing
+            </title>
+            <link rel="stylesheet" href="style.css"> <!--my stylesheet-->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css"> <!--splide stylesheet-->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.58/dist/themes/light.css"> <!--shoelace stylesheet-->
+            <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="override.css"> <!--a stylesheet dedicated to overriding simple changes from the add-ons-->
+    </head>
+    <body>
+        <header class="header">
+            <div class="menubuttons"> <!--header menu buttons for desktop-->
+               <sl-button class="menubutton" id="menubuttonmen" type="text" size="large" onclick="menMenuTranslate(this)">Men</sl-button> <!--buttons with class, id and a Menu Translate function-->
+               <sl-button class="menubutton" id="menubuttonwomen" type="text" size="large" onclick="womenMenuTranslate(this)">Women</sl-button>
+               <sl-button class="menubutton" id="menubuttonchildren" type="text" size="large" onclick="childrenMenuTranslate(this)">Children</sl-button>
+            </div>
+            <div class="mobilemenu">
+                <sl-icon-button class="mobileMenu" id="mobileMenu" name="list" label="Menu" onclick="sideMenuTranslate(this)"></sl-icon-button> <!--icon button for mobile menu-->
+            </div>
+            <div id="logo"> <!--logo-->
+               DRĒM
+            </div>
+        </header>
+        <div class="sidemenus"> <!--div for the menus that open to the side of the screen-->
+            <div class="menmenu" id="menMenu">
+                <sl-button class="menmenubutton" id="menCoatsButton" type="text" size="medium" onclick="scrollMenCoats(this)">Coats</sl-button><!--buttons that trigger a function to scroll to the appropriate place-->
+                <sl-button class="menmenubutton" id="menShirtsButton" type="text" size="medium" onclick="scrollMenShirts(this)">Shirts</sl-button>
+                <sl-button class="menmenubutton" id="menSuitsButton" type="text" size="medium" onclick="scrollMenSuits(this)">Suits</sl-button>
+                <sl-button class="menmenubutton" id="menTrousersButton" type="text" size="medium" onclick="scrollMenTrousers(this)">Trousers</sl-button>
+                <sl-button class="menmenubutton" id="menShoesButton" type="text" size="medium" onclick="scrollMenShoes(this)">Shoes</sl-button>
+            </div>
+            <div class="womenmenu" id="womenMenu">
+                <sl-button class="womenmenubutton" id="womenCoatsButton" type="text" size="medium" onclick="scrollWomenCoats(this)">Coats</sl-button>
+                <sl-button class="womenmenubutton" id="womenShirtsButton" type="text" size="medium" onclick="scrollWomenShirts(this)">Shirts</sl-button>
+                <sl-button class="womenmenubutton" id="womenSuitsButton" type="text" size="medium" onclick="scrollWomenSuits(this)">Suits</sl-button>
+                <sl-button class="womenmenubutton" id="womenTrousersButton" type="text" size="medium" onclick="scrollWomenTrousers(this)">Trousers</sl-button>
+                <sl-button class="womenmenubutton" id="womenShoesButton" type="text" size="medium" onclick="scrollWomenShoes(this)">Shoes</sl-button>
+            </div>
+            <div class="childrenmenu" id="childrenMenu">
+                <sl-button class="childrenmenubutton" id="childrenCoatsButton" type="text" size="medium" onclick="scrollChildrenCoats(this)">Coats</sl-button>
+                <sl-button class="childrenmenubutton" id="childrenShirtButton" type="text" size="medium" onclick="scrollChildrenShirts(this)">Shirts</sl-button>
+                <sl-button class="childrenmenubutton" id="childrenSuitsButton" type="text" size="medium" onclick="scrollChildrenSuits(this)">Suits</sl-button>
+                <sl-button class="childrenmenubutton" id="childrenTrousersButton" type="text" size="medium" onclick="scrollChildrenTrousers(this)">Trousers</sl-button>
+                <sl-button class="childrenmenubutton" id="childrenShoesButton" type="text" size="medium" onclick="scrollChildrenShoes(this)">Shoes</sl-button>
+            </div>
+            <div class="mobilesidemenu" id="mobileSideMenu">
+                <h2>Men</h2>
+                <sl-button class="menmenubutton" id="menCoatsButton" type="text" size="medium" onclick="scrollMenCoats(this)">Coats</sl-button>
+                <sl-button class="menmenubutton" id="menShirtsButton" type="text" size="medium" onclick="scrollMenShirts(this)">Shirts</sl-button>
+                <sl-button class="menmenubutton" id="menSuitsButton" type="text" size="medium" onclick="scrollMenSuits(this)">Suits</sl-button>
+                <sl-button class="menmenubutton" id="menTrousersButton" type="text" size="medium" onclick="scrollMenTrousers(this)">Trousers</sl-button>
+                <sl-button class="menmenubutton" id="menShoesButton" type="text" size="medium" onclick="scrollMenShoes(this)">Shoes</sl-button>
+                <h2>Women</h2>
+                <sl-button class="womenmenubutton" id="womenCoatsButton" type="text" size="medium" onclick="scrollWomenCoats(this)">Coats</sl-button>
+                <sl-button class="womenmenubutton" id="womenShirtsButton" type="text" size="medium" onclick="scrollWomenShirts(this)">Shirts</sl-button>
+                <sl-button class="womenmenubutton" id="womenSuitsButton" type="text" size="medium" onclick="scrollWomenSuits(this)">Suits</sl-button>
+                <sl-button class="womenmenubutton" id="womenTrousersButton" type="text" size="medium" onclick="scrollWomenTrousers(this)">Trousers</sl-button>
+                <sl-button class="womenmenubutton" id="womenShoesButton" type="text" size="medium" onclick="scrollWomenShoes(this)">Shoes</sl-button>
+                <h2>Children</h2>
+                <sl-button class="childrenmenubutton" id="childrenCoatsButton" type="text" size="medium" onclick="scrollChildrenCoats(this)">Coats</sl-button>
+                <sl-button class="childrenmenubutton" id="childrenShirtButton" type="text" size="medium" onclick="scrollChildrenShirts(this)">Shirts</sl-button>
+                <sl-button class="childrenmenubutton" id="childrenSuitsButton" type="text" size="medium" onclick="scrollChildrenSuits(this)">Suits</sl-button>
+                <sl-button class="childrenmenubutton" id="childrenTrousersButton" type="text" size="medium" onclick="scrollChildrenTrousers(this)">Trousers</sl-button>
+                <sl-button class="childrenmenubutton" id="childrenShoesButton" type="text" size="medium" onclick="scrollChildrenShoes(this)">Shoes</sl-button>
+            </div>
+        </div>
+        <div class="progressring">
+            <sl-progress-ring value="" id="progress-ring-values"><!--adding a progress ring that tracks user progress-->
+            </sl-progress-ring>
+        </div>
+        <div class="splide"> <!--calling the splide for carousel-->
+            <div class="splide__track"><!--creating the track that the carousel runs on-->
+                <ul class="splide__list"><!--container for the slides-->
+                    <li class="splide__slide"><!--individual slides-->
+                            <img class="slide1" src="images/clothing-fashion-photographer-1.jpg">
+                    </li>
+                    <li class="splide__slide">
+                            <img class="slide1" src="images/clothing-fashion-photographer-2.jpg">
+                    </li>
+                    <li class="splide__slide">
+                            <img class="slide1" src="images/clothing-fashion-photographer-3.jpg">
+                    </li>
+                    <li class="splide__slide">
+                            <img class="slide1" src="images/clothing-fashion-photographer-7.jpg">
+                    </li>
+                    <li class="splide__slide">
+                            <img class="slide1" src="images/clothing-fashion-photographer-5.jpg">
+                    </li>
+                    <li class="splide__slide">
+                            <img class="slide1" src="images/clothing-fashion-photographer-6.jpg">
+                    </li>
+                </ul>
+            </div>
+            <div class="splide__progress"> <!--adding a progress bar-->
+                <div class="splide__progress__bar">
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="leftcolumn"> <!--the left column of the page-->
+                <div class="mensclothes"> <!--seperating the different sections-->
+                    <h1>Men's Clothing</h1>
+                    <img src="images/clothing-fashion-photographer-4.jpg" id="menCoats">
+                    <h2>Coats</h2> <!--giving each subsection an image with an id for the scrollTo function-->
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in elit ut turpis posuere pulvinar at et risus. Aliquam diam lectus, iaculis eu quam nec, lacinia euismod ante. Donec scelerisque velit in ante suscipit pellentesque. Fusce at dolor arcu. Mauris tellus sapien, fringilla et lobortis quis, scelerisque aliquam enim. Nulla quis lacinia nisl, vitae tempor mi. Aliquam sit amet risus mollis, sollicitudin odio at, tempus elit. Nunc ac consequat quam. In blandit quam mi, nec lacinia nisi tempus sit amet. Maecenas elementum arcu eu mauris dictum suscipit. Quisque dapibus ex nec turpis feugiat auctor.</p>
+                    <img src="images/clothing-fashion-photographer-10.jpg" id="menShirts">
+                    <h2>Shirts</h2>
+                    <p>In sagittis dictum hendrerit. Ut efficitur nunc fermentum, gravida odio vel, venenatis turpis. Donec tempus ullamcorper urna, ac luctus risus vulputate sit amet. Vestibulum vel consequat quam, in hendrerit elit. Suspendisse ultricies eu ex ac vestibulum. Donec sollicitudin suscipit eros, id interdum orci varius et. Morbi a ante mollis, vestibulum purus non, efficitur elit. Suspendisse nec ipsum turpis. Donec tincidunt, justo eget imperdiet blandit, nulla massa pretium elit, vel auctor eros lectus eget dui. Sed leo velit, tempor at iaculis at, dapibus eget ipsum. Cras leo orci, eleifend eu tincidunt eget, maximus eu quam. Vivamus sodales mattis nulla, eget interdum odio finibus in.</p>
+                    <img src="images/clothing-fashion-photographer-4.jpg" id="menSuits">
+                    <h2>Suits</h2>
+                    <p>Phasellus pharetra eleifend est, vel vulputate nisl dignissim non. Etiam nec purus in nisl pellentesque venenatis. Vestibulum rutrum nulla eu erat consectetur, at ullamcorper metus varius. Maecenas laoreet tincidunt sem, vitae fringilla odio. Ut mauris dolor, malesuada non congue et, tincidunt quis nisl. Sed justo dolor, mattis nec libero eu, ultricies ornare est. Nam dictum libero vitae ex tempus ornare. Donec sit amet porta lacus, ut semper ipsum. Praesent molestie ex ut nibh elementum dapibus. Praesent mauris nisl, ullamcorper et nunc nec, pellentesque congue enim. In hac habitasse platea dictumst. Aenean eget ex sit amet sem egestas lacinia. Fusce tempus interdum elit vel molestie. Suspendisse potenti. Donec vel lorem ex.</p>
+                    <img src="images/clothing-fashion-photographer-10.jpg" id="menTrousers">
+                    <h2>Trousers</h2>
+                    <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent aliquam varius dignissim. Donec velit ex, rhoncus id felis quis, sodales sollicitudin risus. Suspendisse in sem ut nunc aliquam commodo. Integer vitae ante finibus, commodo enim nec, gravida augue. Nullam tellus dui, auctor vitae dui vitae, ultricies dignissim ex. Nam magna nibh, eleifend in accumsan vitae, lobortis nec sem. Aenean blandit nisl lacus, eu fermentum nibh pellentesque quis.</p>
+                    <img src="images/clothing-fashion-photographer-4.jpg" id="menShoes">
+                    <h2>Shoes</h2>
+                    <p>Suspendisse facilisis in sapien sit amet tempor. Phasellus vel ex nec sem elementum dignissim ac eu libero. Fusce ut ante tincidunt sem pharetra luctus. Vivamus pharetra varius libero in ornare. Maecenas commodo aliquet lectus, vel auctor lacus varius vitae. Donec vitae ligula elit. Nullam lobortis quam risus, ut sagittis purus elementum eget. Pellentesque non convallis sem, at facilisis neque. Fusce arcu nibh, finibus sed lectus quis, dapibus tincidunt dolor. Etiam quis dignissim felis. Morbi consectetur auctor vestibulum. Phasellus suscipit hendrerit nulla ut ornare. Quisque eu est pulvinar, pulvinar turpis eget, fermentum sem. Fusce in feugiat elit, eget consectetur est. Duis arcu nisi, sodales nec mauris et, tempus consequat quam. Vivamus mattis maximus efficitur.</p> <br>
+                </div>
+                <div class="childrensclothes">
+                    <h1>Children's Clothing</h1>
+                    <img src="images/clothing-fashion-photographer-4.jpg" id="childrensCoats">
+                    <h2>Coats</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in elit ut turpis posuere pulvinar at et risus. Aliquam diam lectus, iaculis eu quam nec, lacinia euismod ante. Donec scelerisque velit in ante suscipit pellentesque. Fusce at dolor arcu. Mauris tellus sapien, fringilla et lobortis quis, scelerisque aliquam enim. Nulla quis lacinia nisl, vitae tempor mi. Aliquam sit amet risus mollis, sollicitudin odio at, tempus elit. Nunc ac consequat quam. In blandit quam mi, nec lacinia nisi tempus sit amet. Maecenas elementum arcu eu mauris dictum suscipit. Quisque dapibus ex nec turpis feugiat auctor.</p>
+                    <img src="images/clothing-fashion-photographer-10.jpg" id="childrensShirts">
+                    <h2>Shirts</h2>
+                    <p>In sagittis dictum hendrerit. Ut efficitur nunc fermentum, gravida odio vel, venenatis turpis. Donec tempus ullamcorper urna, ac luctus risus vulputate sit amet. Vestibulum vel consequat quam, in hendrerit elit. Suspendisse ultricies eu ex ac vestibulum. Donec sollicitudin suscipit eros, id interdum orci varius et. Morbi a ante mollis, vestibulum purus non, efficitur elit. Suspendisse nec ipsum turpis. Donec tincidunt, justo eget imperdiet blandit, nulla massa pretium elit, vel auctor eros lectus eget dui. Sed leo velit, tempor at iaculis at, dapibus eget ipsum. Cras leo orci, eleifend eu tincidunt eget, maximus eu quam. Vivamus sodales mattis nulla, eget interdum odio finibus in.</p>
+                    <img src="images/clothing-fashion-photographer-4.jpg" id="childrensSuits">
+                    <h2>Suits</h2>
+                    <p>Phasellus pharetra eleifend est, vel vulputate nisl dignissim non. Etiam nec purus in nisl pellentesque venenatis. Vestibulum rutrum nulla eu erat consectetur, at ullamcorper metus varius. Maecenas laoreet tincidunt sem, vitae fringilla odio. Ut mauris dolor, malesuada non congue et, tincidunt quis nisl. Sed justo dolor, mattis nec libero eu, ultricies ornare est. Nam dictum libero vitae ex tempus ornare. Donec sit amet porta lacus, ut semper ipsum. Praesent molestie ex ut nibh elementum dapibus. Praesent mauris nisl, ullamcorper et nunc nec, pellentesque congue enim. In hac habitasse platea dictumst. Aenean eget ex sit amet sem egestas lacinia. Fusce tempus interdum elit vel molestie. Suspendisse potenti. Donec vel lorem ex.</p>
+                    <img src="images/clothing-fashion-photographer-10.jpg" id="childrensTrousers">
+                    <h2>Trousers</h2>
+                    <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent aliquam varius dignissim. Donec velit ex, rhoncus id felis quis, sodales sollicitudin risus. Suspendisse in sem ut nunc aliquam commodo. Integer vitae ante finibus, commodo enim nec, gravida augue. Nullam tellus dui, auctor vitae dui vitae, ultricies dignissim ex. Nam magna nibh, eleifend in accumsan vitae, lobortis nec sem. Aenean blandit nisl lacus, eu fermentum nibh pellentesque quis.</p>
+                    <img src="images/clothing-fashion-photographer-4.jpg" id="childrensShoes">
+                    <h2>Shoes</h2>
+                    <p>Suspendisse facilisis in sapien sit amet tempor. Phasellus vel ex nec sem elementum dignissim ac eu libero. Fusce ut ante tincidunt sem pharetra luctus. Vivamus pharetra varius libero in ornare. Maecenas commodo aliquet lectus, vel auctor lacus varius vitae. Donec vitae ligula elit. Nullam lobortis quam risus, ut sagittis purus elementum eget. Pellentesque non convallis sem, at facilisis neque. Fusce arcu nibh, finibus sed lectus quis, dapibus tincidunt dolor. Etiam quis dignissim felis. Morbi consectetur auctor vestibulum. Phasellus suscipit hendrerit nulla ut ornare. Quisque eu est pulvinar, pulvinar turpis eget, fermentum sem. Fusce in feugiat elit, eget consectetur est. Duis arcu nisi, sodales nec mauris et, tempus consequat quam. Vivamus mattis maximus efficitur.</p>
+                </div>
+            </div>
+            <div class="rightcolumn">
+                <div class="imagerating"><!--div for an image tha can be rated-->
+                    <img src="images/clothing-fashion-photographer-8.jpg">
+                    <sl-rating id="rating" precision=".5" value="2.5"></sl-rating>
+                    <h1>Cut Tops</h1>
+                    <p>New coats for men hit the scene</p>
+                </div>
+                <div class="womensclothes">
+                    <h1>Women's Clothing</h1>
+                    <img src="images/clothing-fashion-photographer-4.jpg" id="womensCoats">
+                    <h2>Coats</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in elit ut turpis posuere pulvinar at et risus. Aliquam diam lectus, iaculis eu quam nec, lacinia euismod ante. Donec scelerisque velit in ante suscipit pellentesque. Fusce at dolor arcu. Mauris tellus sapien, fringilla et lobortis quis, scelerisque aliquam enim. Nulla quis lacinia nisl, vitae tempor mi. Aliquam sit amet risus mollis, sollicitudin odio at, tempus elit. Nunc ac consequat quam. In blandit quam mi, nec lacinia nisi tempus sit amet. Maecenas elementum arcu eu mauris dictum suscipit. Quisque dapibus ex nec turpis feugiat auctor.</p>
+                    <img src="images/clothing-fashion-photographer-10.jpg" id="womensShirts">
+                    <h2>Shirts</h2>
+                    <p>In sagittis dictum hendrerit. Ut efficitur nunc fermentum, gravida odio vel, venenatis turpis. Donec tempus ullamcorper urna, ac luctus risus vulputate sit amet. Vestibulum vel consequat quam, in hendrerit elit. Suspendisse ultricies eu ex ac vestibulum. Donec sollicitudin suscipit eros, id interdum orci varius et. Morbi a ante mollis, vestibulum purus non, efficitur elit. Suspendisse nec ipsum turpis. Donec tincidunt, justo eget imperdiet blandit, nulla massa pretium elit, vel auctor eros lectus eget dui. Sed leo velit, tempor at iaculis at, dapibus eget ipsum. Cras leo orci, eleifend eu tincidunt eget, maximus eu quam. Vivamus sodales mattis nulla, eget interdum odio finibus in.</p>
+                    <img src="images/clothing-fashion-photographer-4.jpg" id="womensSuits">
+                    <h2>Suits</h2>
+                    <p>Phasellus pharetra eleifend est, vel vulputate nisl dignissim non. Etiam nec purus in nisl pellentesque venenatis. Vestibulum rutrum nulla eu erat consectetur, at ullamcorper metus varius. Maecenas laoreet tincidunt sem, vitae fringilla odio. Ut mauris dolor, malesuada non congue et, tincidunt quis nisl. Sed justo dolor, mattis nec libero eu, ultricies ornare est. Nam dictum libero vitae ex tempus ornare. Donec sit amet porta lacus, ut semper ipsum. Praesent molestie ex ut nibh elementum dapibus. Praesent mauris nisl, ullamcorper et nunc nec, pellentesque congue enim. In hac habitasse platea dictumst. Aenean eget ex sit amet sem egestas lacinia. Fusce tempus interdum elit vel molestie. Suspendisse potenti. Donec vel lorem ex.</p>
+                    <img src="images/clothing-fashion-photographer-10.jpg" id="womensTrousers">
+                    <h2>Trousers</h2>
+                    <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent aliquam varius dignissim. Donec velit ex, rhoncus id felis quis, sodales sollicitudin risus. Suspendisse in sem ut nunc aliquam commodo. Integer vitae ante finibus, commodo enim nec, gravida augue. Nullam tellus dui, auctor vitae dui vitae, ultricies dignissim ex. Nam magna nibh, eleifend in accumsan vitae, lobortis nec sem. Aenean blandit nisl lacus, eu fermentum nibh pellentesque quis.</p>
+                    <img src="images/clothing-fashion-photographer-4.jpg" id="womensShoes">
+                    <h2>Shoes</h2>
+                    <p>Suspendisse facilisis in sapien sit amet tempor. Phasellus vel ex nec sem elementum dignissim ac eu libero. Fusce ut ante tincidunt sem pharetra luctus. Vivamus pharetra varius libero in ornare. Maecenas commodo aliquet lectus, vel auctor lacus varius vitae. Donec vitae ligula elit. Nullam lobortis quam risus, ut sagittis purus elementum eget. Pellentesque non convallis sem, at facilisis neque. Fusce arcu nibh, finibus sed lectus quis, dapibus tincidunt dolor. Etiam quis dignissim felis. Morbi consectetur auctor vestibulum. Phasellus suscipit hendrerit nulla ut ornare. Quisque eu est pulvinar, pulvinar turpis eget, fermentum sem. Fusce in feugiat elit, eget consectetur est. Duis arcu nisi, sodales nec mauris et, tempus consequat quam. Vivamus mattis maximus efficitur.</p>
+                </div>
+            </div>
+        </div>
+       <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script> <!--splide script-->
+       <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.58/dist/shoelace.js"></script> <!--shoelace script-->
+       <script src="anime-master/anime-master/lib/anime.min.js"></script> <!--anime.js script-->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>  <!--base gsap script script that helps ScrollTrigger to function-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>  <!--scrolltrigger script-->
+       <script src="main.js"></script> <!--my script-->
+    </body>
+</html>
